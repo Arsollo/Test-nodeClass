@@ -10,6 +10,9 @@ const path = require("path")
 // ------------------------------------------ Setting up the server ------------------------------------------ //
 const app = express()
 
+//Either stores the port provided by Horuko or locally the 3000 port
+const port = process.env.PORT || 3000
+
 //Linking Express to the HTML & CSS files
 const TemplatesDirectoryPath = path.join(__dirname, '../Templates')
 const HTMLDirectoryPath = path.join(__dirname, "../Templates/HTML")
@@ -61,7 +64,7 @@ app.get('*', (req, res) => {
 
 
 // ------------------------------------------ Starting up the server ------------------------------------------ //
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000.')
 })
 
